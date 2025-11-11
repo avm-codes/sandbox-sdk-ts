@@ -1,5 +1,5 @@
 import { inspect } from 'node:util';
-import { buildHeaders, type HeadersLike, type NullableHeaders } from 'sandbox-sdk/internal/headers';
+import { buildHeaders, type HeadersLike, type NullableHeaders } from '@avmcodes/sandbox-sdk/internal/headers';
 
 function inspectNullableHeaders(headers: NullableHeaders) {
   return `NullableHeaders {${[
