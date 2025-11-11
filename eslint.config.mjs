@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^sandbox-sdk(/.*)?',
+              regex: '^@avmcodes/sandbox-sdk(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],

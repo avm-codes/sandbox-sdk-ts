@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'sandbox-sdk/internal/uploads';
-import { toFile } from 'sandbox-sdk/core/uploads';
+import { multipartFormRequestOptions, createForm } from '@avmcodes/sandbox-sdk/internal/uploads';
+import { toFile } from '@avmcodes/sandbox-sdk/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
