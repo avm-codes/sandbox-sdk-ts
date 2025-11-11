@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "sandbox-sdk/*": ["./src/*"],
-      "sandbox-sdk": ["./src/index.ts"]
+      "@avmcodes/sandbox-sdk/*": ["./src/*"],
+      "@avmcodes/sandbox-sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 

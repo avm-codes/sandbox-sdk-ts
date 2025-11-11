@@ -1,12 +1,12 @@
 {
-  "name": "sandbox-sdk",
-  "version": "0.0.1",
+  "name": "@avmcodes/sandbox-sdk",
+  "version": "1.0.0",
   "description": "The official TypeScript library for the Sandbox SDK API",
   "author": "Sandbox SDK <>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/sandbox-sdk-typescript",
+  "repository": "github:avm-codes/sandbox-sdk-ts",
   "license": "Apache-2.0",
   "packageManager": "pnpm@10.14.0",
   "files": [

@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "sandbox-sdk/*": ["./dist/src/*"],
-      "sandbox-sdk": ["./dist/src/index.ts"]
+      "@avmcodes/sandbox-sdk/*": ["./dist/src/*"],
+      "@avmcodes/sandbox-sdk": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

@@ -1,4 +1,4 @@
 configured_endpoints: 11
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/agents-virtual-machine%2Fsandbox-sdk-ed5792666229eb57310a39a673cd766ea5f56f0adc82580bfcfb369ba03500bc.yml
-openapi_spec_hash: 0735fc7893a11df0f63795141b528198
-config_hash: 55c4f804e9f979620a4b6c9d2a534870
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/agents-virtual-machine%2Fsandbox-sdk-35b93769647a17e241cbf7ee79c755e95cd896666628c8a84cde50fe9c45318f.yml
+openapi_spec_hash: f275c358c72bc4942cf0eca62eee3f2b
+config_hash: 657a41c5f3faa1ca8150b6d011e09fec

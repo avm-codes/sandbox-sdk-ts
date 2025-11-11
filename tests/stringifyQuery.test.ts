@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { SandboxSDK } from 'sandbox-sdk';
+import { SandboxSDK } from '@avmcodes/sandbox-sdk';
 
 const { stringifyQuery } = SandboxSDK.prototype as any;
 
