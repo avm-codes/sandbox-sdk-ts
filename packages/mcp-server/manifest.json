@@ -1,0 +1,41 @@
+{
+  "dxt_version": "0.2",
+  "name": "@avmcodes/sandbox-sdk-mcp",
+  "version": "1.1.0",
+  "description": "The official MCP Server for the Sandbox SDK API",
+  "author": {
+    "name": "Sandbox SDK"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avm-codes/sandbox-sdk-ts.git"
+  },
+  "homepage": "https://github.com/avm-codes/sandbox-sdk-ts/tree/main/packages/mcp-server#readme",
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.js"],
+      "env": {
+        "SANDBOX_SDK_API_KEY": "${user_config.SANDBOX_SDK_API_KEY}"
+      }
+    }
+  },
+  "user_config": {
+    "SANDBOX_SDK_API_KEY": {
+      "title": "api_key",
+      "description": "API key provided in the x-api-key header. Either this or apiKey query parameter is required.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "tools": [],
+  "tools_generated": true,
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "keywords": ["api"]
+}
