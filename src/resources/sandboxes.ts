@@ -195,7 +195,7 @@ export interface SandboxCreateResponse
   id?: string;
 
   /**
-   * CPU count
+   * CPU count (supports decimals)
    */
   cpu?: number;
 
@@ -360,7 +360,7 @@ export interface SandboxCreateParams {
 export namespace SandboxCreateParams {
   export interface Resources {
     /**
-     * Number of vCPUs
+     * Number of vCPUs (supports decimals, e.g., 0.25)
      */
     cpus?: number;
 
