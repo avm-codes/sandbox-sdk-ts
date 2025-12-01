@@ -29,7 +29,7 @@ describe('resource sandboxes', () => {
           env_vars: { foo: 'string' },
           image: 'avmcodes/avm-default-sandbox',
           name: 'API Development',
-          resources: { cpus: 2, memory: 512 },
+          resources: { cpus: 0.25, memory: 512 },
           volumes: [{ mount_path: '/data', volume_id: 'vol_x1y2z3a4b5c6d7e8' }],
         },
         { path: '/_stainless_unknown_path' },
