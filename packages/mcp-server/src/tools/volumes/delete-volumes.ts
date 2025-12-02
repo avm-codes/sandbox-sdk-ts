@@ -44,7 +44,7 @@ export const handler = async (client: SandboxSDK, args: Record<string, unknown> 
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.volumes.delete(id)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof SandboxSDK.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
