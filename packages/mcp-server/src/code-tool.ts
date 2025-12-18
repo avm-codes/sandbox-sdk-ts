@@ -35,7 +35,10 @@ export async function codeTool() {
       headers: {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
-        client_envs: JSON.stringify({ SANDBOX_SDK_API_KEY: readEnv('SANDBOX_SDK_API_KEY') }),
+        client_envs: JSON.stringify({
+          SANDBOX_SDK_API_KEY: readEnv('SANDBOX_SDK_API_KEY'),
+          SANDBOX_SDK_BASE_URL: readEnv('SANDBOX_SDK_BASE_URL'),
+        }),
       },
       body: JSON.stringify({
         project_name: 'sandbox-sdk',
