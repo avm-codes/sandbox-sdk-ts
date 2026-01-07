@@ -123,6 +123,9 @@ describe('resource sandboxes', () => {
 
   // Prism tests are disabled
   test.skip('upload: required and optional params', async () => {
-    const response = await client.sandboxes.upload('id', { path: 'path', file: {} });
+    const response = await client.sandboxes.upload('id', {
+      path: 'path',
+      file: {},
+    });
   });
 });
