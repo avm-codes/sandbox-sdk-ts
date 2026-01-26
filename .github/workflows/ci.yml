@@ -19,17 +19,17 @@ jobs:
     runs-on: ${{ github.repository == 'stainless-sdks/sandbox-sdk-typescript' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
     if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: '10.14.0'
+          version: '10.24.0'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
@@ -46,17 +46,17 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: '10.14.0'
+          version: '10.24.0'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
@@ -67,7 +67,7 @@ jobs:
       - name: Get GitHub OIDC Token
         if: github.repository == 'stainless-sdks/sandbox-sdk-typescript'
         id: github-oidc
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: core.setOutput('github_token', await core.getIDToken());
 
@@ -78,26 +78,38 @@ jobs:
           AUTH: ${{ steps.github-oidc.outputs.github_token }}
           SHA: ${{ github.sha }}
         run: ./scripts/utils/upload-artifact.sh
+
+      - name: Upload MCP Server tarball
+        if: github.repository == 'stainless-sdks/sandbox-sdk-typescript'
+        env:
+          URL: https://pkg.stainless.com/s?subpackage=mcp-server
+          AUTH: ${{ steps.github-oidc.outputs.github_token }}
+          SHA: ${{ github.sha }}
+          BASE_PATH: packages/mcp-server
+        run: ./scripts/utils/upload-artifact.sh
   test:
     timeout-minutes: 10
     name: test
     runs-on: ${{ github.repository == 'stainless-sdks/sandbox-sdk-typescript' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
     if: github.event_name == 'push' || github.event.pull_request.head.repo.fork
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: '10.14.0'
+          version: '10.24.0'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
+
+      - name: Build
+        run: ./scripts/build
 
       - name: Run tests
         run: ./scripts/test

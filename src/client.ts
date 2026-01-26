@@ -22,6 +22,7 @@ import {
   SandboxCreateParams,
   SandboxCreateResponse,
   SandboxDeleteAllResponse,
+  SandboxDeleteParams,
   SandboxDeleteResponse,
   SandboxDownloadParams,
   SandboxExecuteParams,
@@ -32,16 +33,7 @@ import {
   SandboxUploadResponse,
   Sandboxes,
 } from './resources/sandboxes';
-import {
-  Volume,
-  VolumeCreateParams,
-  VolumeCreateSnapshotParams,
-  VolumeCreateSnapshotResponse,
-  VolumeDeleteResponse,
-  VolumeListParams,
-  VolumeListResponse,
-  Volumes,
-} from './resources/volumes';
+import { Volumes } from './resources/volumes';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -139,7 +131,7 @@ export class SandboxSDK {
   baseURL: string;
   maxRetries: number;
   timeout: number;
-  logger: Logger | undefined;
+  logger: Logger;
   logLevel: LogLevel | undefined;
   fetchOptions: MergedRequestInit | undefined;
 
@@ -761,19 +753,11 @@ export declare namespace SandboxSDK {
     type SandboxUploadResponse as SandboxUploadResponse,
     type SandboxCreateParams as SandboxCreateParams,
     type SandboxListParams as SandboxListParams,
+    type SandboxDeleteParams as SandboxDeleteParams,
     type SandboxDownloadParams as SandboxDownloadParams,
     type SandboxExecuteParams as SandboxExecuteParams,
     type SandboxUploadParams as SandboxUploadParams,
   };
 
-  export {
-    Volumes as Volumes,
-    type Volume as Volume,
-    type VolumeListResponse as VolumeListResponse,
-    type VolumeDeleteResponse as VolumeDeleteResponse,
-    type VolumeCreateSnapshotResponse as VolumeCreateSnapshotResponse,
-    type VolumeCreateParams as VolumeCreateParams,
-    type VolumeListParams as VolumeListParams,
-    type VolumeCreateSnapshotParams as VolumeCreateSnapshotParams,
-  };
+  export { Volumes as Volumes };
 }

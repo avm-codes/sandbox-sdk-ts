@@ -40,8 +40,12 @@ export class Sandboxes extends APIResource {
    * const sandbox = await client.sandboxes.delete('id');
    * ```
    */
-  delete(id: string, options?: RequestOptions): APIPromise<SandboxDeleteResponse> {
-    return this._client.delete(path`/v1/sandboxes/${id}/delete`, options);
+  delete(
+    id: string,
+    body: SandboxDeleteParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<SandboxDeleteResponse> {
+    return this._client.delete(path`/v1/sandboxes/${id}/delete`, { body, ...options });
   }
 
   /**
@@ -148,7 +152,44 @@ export interface Sandbox {
   created_at: string;
 
   /**
+   * Disk size in GB
+   */
+  disk_size: number;
+
+  /**
    * Memory size in MB
+   */
+  memory: number;
+
+  /**
+   * Sandbox name
+   */
+  name: string;
+
+  /**
+   * Sandbox status
+   */
+  status: string;
+}
+
+export interface SandboxCreateResponse extends Sandbox {
+  /**
+   * Sandbox ID
+   */
+  id: string;
+
+  /**
+   * CPU count (API units, minimum 1)
+   */
+  cpu: number;
+
+  /**
+   * Creation timestamp
+   */
+  created_at: string;
+
+  /**
+   * Memory size in MiB
    */
   memory: number;
 
@@ -163,61 +204,9 @@ export interface Sandbox {
   status: string;
 
   /**
-   * Volumes mounted on this sandbox
+   * Storage size in GB
    */
-  volumes?: Array<Sandbox.Volume>;
-}
-
-export namespace Sandbox {
-  export interface Volume {
-    /**
-     * Mount path in the container
-     */
-    mount_path: string;
-
-    /**
-     * Volume ID
-     */
-    volume_id: string;
-
-    /**
-     * Volume name
-     */
-    volume_name: string;
-  }
-}
-
-export interface SandboxCreateResponse
-  extends Omit<Sandbox, 'id' | 'cpu' | 'created_at' | 'memory' | 'name' | 'status'> {
-  /**
-   * Sandbox ID
-   */
-  id?: string;
-
-  /**
-   * CPU count (supports decimals)
-   */
-  cpu?: number;
-
-  /**
-   * Creation timestamp
-   */
-  created_at?: string;
-
-  /**
-   * Memory size in MB
-   */
-  memory?: number;
-
-  /**
-   * Sandbox name
-   */
-  name?: string;
-
-  /**
-   * Sandbox status
-   */
-  status?: string;
+  storage: number;
 }
 
 export interface SandboxListResponse {
@@ -236,6 +225,26 @@ export interface SandboxDeleteResponse {
   id: string;
 
   message: string;
+
+  /**
+   * Whether snapshot was created
+   */
+  snapshot_created?: boolean;
+
+  /**
+   * Name of created snapshot
+   */
+  snapshot_name?: string;
+
+  /**
+   * Whether storage was deleted
+   */
+  storage_deleted?: boolean;
+
+  /**
+   * Name of deleted storage
+   */
+  storage_name?: string;
 }
 
 export interface SandboxDeleteAllResponse {
@@ -258,6 +267,11 @@ export interface SandboxDeleteAllResponse {
    * Array of deletion errors, if any
    */
   errors?: Array<SandboxDeleteAllResponse.Error>;
+
+  /**
+   * Number of storage volumes deleted
+   */
+  storage_deleted_count?: number;
 }
 
 export namespace SandboxDeleteAllResponse {
@@ -345,22 +359,23 @@ export interface SandboxCreateParams {
   image?: string;
 
   /**
-   * Sandbox name
+   * Custom sandbox name (auto-generated as sandbox-{user_id}-{timestamp} if not
+   * provided)
    */
   name?: string;
 
   resources?: SandboxCreateParams.Resources;
 
   /**
-   * Volumes to attach to the sandbox
+   * Wait for sandbox to be ready before returning
    */
-  volumes?: Array<SandboxCreateParams.Volume>;
+  wait_for_ready?: boolean;
 }
 
 export namespace SandboxCreateParams {
   export interface Resources {
     /**
-     * Number of vCPUs (supports decimals, e.g., 0.25)
+     * Number of CPUs (minimum: 1, 1 CPU = 0.25 Kubernetes vCPU)
      */
     cpus?: number;
 
@@ -368,19 +383,11 @@ export namespace SandboxCreateParams {
      * Memory size in MiB
      */
     memory?: number;
-  }
-
-  export interface Volume {
-    /**
-     * Mount path in the container
-     */
-    mount_path: string;
 
     /**
-     * Volume ID or Snapshot ID. If a snapshot ID is provided, a new volume will be
-     * created from the snapshot.
+     * Storage size in GB
      */
-    volume_id: string;
+    storage?: number;
   }
 }
 
@@ -394,6 +401,23 @@ export interface SandboxListParams {
    * Page size
    */
   page_size?: number;
+}
+
+export interface SandboxDeleteParams {
+  /**
+   * Create snapshot before deleting storage
+   */
+  create_snapshot?: boolean;
+
+  /**
+   * Keep storage after deletion (default: false - storage deleted)
+   */
+  keep_storage?: boolean;
+
+  /**
+   * Custom name for the snapshot
+   */
+  snapshot_name?: string;
 }
 
 export interface SandboxDownloadParams {
@@ -450,6 +474,7 @@ export declare namespace Sandboxes {
     type SandboxUploadResponse as SandboxUploadResponse,
     type SandboxCreateParams as SandboxCreateParams,
     type SandboxListParams as SandboxListParams,
+    type SandboxDeleteParams as SandboxDeleteParams,
     type SandboxDownloadParams as SandboxDownloadParams,
     type SandboxExecuteParams as SandboxExecuteParams,
     type SandboxUploadParams as SandboxUploadParams,
