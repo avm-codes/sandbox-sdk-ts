@@ -1,6 +1,6 @@
 {
   "name": "@avmcodes/sandbox-sdk",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "The official TypeScript library for the Sandbox SDK API",
   "author": "Sandbox SDK <>",
   "types": "dist/index.d.ts",
