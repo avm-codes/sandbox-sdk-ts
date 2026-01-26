@@ -12,17 +12,9 @@ export {
   type SandboxUploadResponse,
   type SandboxCreateParams,
   type SandboxListParams,
+  type SandboxDeleteParams,
   type SandboxDownloadParams,
   type SandboxExecuteParams,
   type SandboxUploadParams,
 } from './sandboxes';
-export {
-  Volumes,
-  type Volume,
-  type VolumeListResponse,
-  type VolumeDeleteResponse,
-  type VolumeCreateSnapshotResponse,
-  type VolumeCreateParams,
-  type VolumeListParams,
-  type VolumeCreateSnapshotParams,
-} from './volumes';
+export { Volumes } from './volumes';

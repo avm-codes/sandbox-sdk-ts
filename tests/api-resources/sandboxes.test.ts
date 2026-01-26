@@ -28,9 +28,13 @@ describe('resource sandboxes', () => {
         {
           env_vars: { foo: 'string' },
           image: 'avmcodes/avm-default-sandbox',
-          name: 'API Development',
-          resources: { cpus: 0.25, memory: 512 },
-          volumes: [{ mount_path: '/data', volume_id: 'vol_x1y2z3a4b5c6d7e8' }],
+          name: 'my-project',
+          resources: {
+            cpus: 1,
+            memory: 512,
+            storage: 10,
+          },
+          wait_for_ready: true,
         },
         { path: '/_stainless_unknown_path' },
       ),
@@ -67,6 +71,22 @@ describe('resource sandboxes', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('delete: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.sandboxes.delete(
+        'id',
+        {
+          create_snapshot: true,
+          keep_storage: false,
+          snapshot_name: 'final-backup',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(SandboxSDK.NotFoundError);
   });
 
   // Prism tests are disabled
