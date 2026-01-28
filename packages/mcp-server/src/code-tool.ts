@@ -2,7 +2,7 @@
 
 import { McpTool, Metadata, ToolCallResult, asErrorResult, asTextContentResult } from './types';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import { readEnv, readEnvOrError } from './server';
+import { readEnv, requireValue } from './server';
 import { WorkerInput, WorkerOutput } from './code-tool-types';
 import { SandboxSDK } from '@avmcodes/sandbox-sdk';
 
@@ -71,7 +71,10 @@ export function codeTool(): McpTool {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
-          SANDBOX_SDK_API_KEY: readEnvOrError('SANDBOX_SDK_API_KEY') ?? client.apiKey ?? undefined,
+          SANDBOX_SDK_API_KEY: requireValue(
+            readEnv('SANDBOX_SDK_API_KEY') ?? client.apiKey,
+            'set SANDBOX_SDK_API_KEY environment variable or provide apiKey client option',
+          ),
           SANDBOX_SDK_BASE_URL: readEnv('SANDBOX_SDK_BASE_URL') ?? client.baseURL ?? undefined,
         }),
       },
