@@ -39,14 +39,14 @@ For clients with a configuration JSON, it might look something like this:
 If you use Cursor, you can install the MCP server by using the button below. You will need to set your environment variables
 in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > New MCP Server.
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=%40avmcodes%2Fsandbox-sdk-mcp&config=eyJuYW1lIjoiQGF2bWNvZGVzL3NhbmRib3gtc2RrLW1jcCIsInRyYW5zcG9ydCI6InNzZSIsInVybCI6Imh0dHBzOi8vc2FuZGJveC1zZGsuc3RsbWNwLmNvbS9zc2UiLCJlbnYiOnsiU0FOREJPWF9TREtfQVBJX0tFWSI6IlNldCB5b3VyIFNBTkRCT1hfU0RLX0FQSV9LRVkgaGVyZS4ifX0)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=%40avmcodes%2Fsandbox-sdk-mcp&config=eyJuYW1lIjoiQGF2bWNvZGVzL3NhbmRib3gtc2RrLW1jcCIsInRyYW5zcG9ydCI6Imh0dHAiLCJ1cmwiOiJodHRwczovL3NhbmRib3gtc2RrLnN0bG1jcC5jb20iLCJoZWFkZXJzIjp7IngtYXBpLWtleSI6Ik15IEFQSSBLZXkifX0)
 
 ### VS Code
 
 If you use MCP, you can install the MCP server by clicking the link below. You will need to set your environment variables
 in VS Code's `mcp.json`, which can be found via Command Palette > MCP: Open User Configuration.
 
-[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22%40avmcodes%2Fsandbox-sdk-mcp%22%2C%22type%22%3A%22sse%22%2C%22url%22%3A%22https%3A%2F%2Fsandbox-sdk.stlmcp.com%2Fsse%22%2C%22env%22%3A%7B%22SANDBOX_SDK_API_KEY%22%3A%22Set%20your%20SANDBOX_SDK_API_KEY%20here.%22%7D%7D)
+[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22%40avmcodes%2Fsandbox-sdk-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fsandbox-sdk.stlmcp.com%22%2C%22headers%22%3A%7B%22x-api-key%22%3A%22My%20API%20Key%22%7D%7D)
 
 ### Claude Code
 
@@ -54,7 +54,7 @@ If you use Claude Code, you can install the MCP server by running the command be
 environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
 
 ```
-claude mcp add avmcodes_sandbox_sdk_mcp_api --env SANDBOX_SDK_API_KEY="Your SANDBOX_SDK_API_KEY here." --transport sse https://sandbox-sdk.stlmcp.com/sse
+claude mcp add avmcodes_sandbox_sdk_mcp_api --header "x-api-key: My API Key" --transport http https://sandbox-sdk.stlmcp.com
 ```
 
 ## Code Mode
