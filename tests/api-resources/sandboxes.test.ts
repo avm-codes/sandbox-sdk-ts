@@ -81,7 +81,7 @@ describe('resource sandboxes', () => {
         'id',
         {
           create_snapshot: true,
-          keep_storage: false,
+          keep_storage: true,
           snapshot_name: 'final-backup',
         },
         { path: '/_stainless_unknown_path' },
