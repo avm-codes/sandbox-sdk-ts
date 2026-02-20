@@ -8,7 +8,7 @@ const client = new SandboxSDK({
 });
 
 describe('resource sandboxes', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.sandboxes.create();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -41,7 +41,7 @@ describe('resource sandboxes', () => {
     ).rejects.toThrow(SandboxSDK.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.sandboxes.list();
     const rawResponse = await responsePromise.asResponse();
@@ -53,7 +53,7 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -61,7 +61,7 @@ describe('resource sandboxes', () => {
     ).rejects.toThrow(SandboxSDK.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.sandboxes.delete('id');
     const rawResponse = await responsePromise.asResponse();
@@ -73,7 +73,7 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -89,7 +89,7 @@ describe('resource sandboxes', () => {
     ).rejects.toThrow(SandboxSDK.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('deleteAll', async () => {
     const responsePromise = client.sandboxes.deleteAll();
     const rawResponse = await responsePromise.asResponse();
@@ -105,7 +105,7 @@ describe('resource sandboxes', () => {
     const response = await client.sandboxes.download('id', { path: 'path' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('execute: only required params', async () => {
     const responsePromise = client.sandboxes.execute('id', {
       command: 'python -c "print(\'Hello, World!\')"',
@@ -119,7 +119,7 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('execute: required and optional params', async () => {
     const response = await client.sandboxes.execute('id', {
       command: 'python -c "print(\'Hello, World!\')"',
@@ -129,7 +129,7 @@ describe('resource sandboxes', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upload: only required params', async () => {
     const responsePromise = client.sandboxes.upload('id', { path: 'path' });
     const rawResponse = await responsePromise.asResponse();
@@ -141,7 +141,7 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upload: required and optional params', async () => {
     const response = await client.sandboxes.upload('id', {
       path: 'path',
