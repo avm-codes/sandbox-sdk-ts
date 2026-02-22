@@ -101,7 +101,8 @@ describe('resource sandboxes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('download: required and optional params', async () => {
+  // Mock server tests are disabled
+  test.skip('download: required and optional params', async () => {
     const response = await client.sandboxes.download('id', { path: 'path' });
   });
 
