@@ -60,7 +60,7 @@ $ yarn link @avmcodes/sandbox-sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @avmcodes/sandbox-sdk
+$ pnpm link --global @avmcodes/sandbox-sdk
 ```
 
 ## Running tests
