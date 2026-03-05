@@ -155,7 +155,7 @@ const remoteStainlessHandler = async ({
     headers: {
       ...(reqContext.stainlessApiKey && { Authorization: reqContext.stainlessApiKey }),
       'Content-Type': 'application/json',
-      client_envs: JSON.stringify({
+      'x-stainless-mcp-client-envs': JSON.stringify({
         SANDBOX_SDK_API_KEY: requireValue(
           readEnv('SANDBOX_SDK_API_KEY') ?? client.apiKey,
           'set SANDBOX_SDK_API_KEY environment variable or provide apiKey client option',
