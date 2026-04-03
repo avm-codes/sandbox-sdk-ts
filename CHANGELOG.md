@@ -1,5 +1,98 @@
 # Changelog
 
+## 2.1.0 (2026-04-03)
+
+Full Changelog: [v2.0.0...v2.1.0](https://github.com/avm-codes/sandbox-sdk-ts/compare/v2.0.0...v2.1.0)
+
+### Features
+
+* **api:** api update ([9cd6dea](https://github.com/avm-codes/sandbox-sdk-ts/commit/9cd6dea50b6c4d0f0a931f4113d4a5e805c66fd1))
+* **mcp:** add an option to disable code tool ([2d225b0](https://github.com/avm-codes/sandbox-sdk-ts/commit/2d225b09c6f00fdfd73a74db044f46f124f1fe52))
+* **mcp:** add initial server instructions ([13603b4](https://github.com/avm-codes/sandbox-sdk-ts/commit/13603b43e7c3116f2abf72cc73d2c5be9dcc4ce2))
+
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([33f3868](https://github.com/avm-codes/sandbox-sdk-ts/commit/33f3868899400f1488f8277857bdf817357539fe))
+* **client:** avoid removing abort listener too early ([911b7cb](https://github.com/avm-codes/sandbox-sdk-ts/commit/911b7cb666058d32368eb819ad88274add2dff67))
+* **client:** preserve URL params already embedded in path ([d310998](https://github.com/avm-codes/sandbox-sdk-ts/commit/d3109985143a9c4d3e43478ccda7cc87a3c0a0cd))
+* **docs/contributing:** correct pnpm link command ([9f1889d](https://github.com/avm-codes/sandbox-sdk-ts/commit/9f1889d9898311dfbe06144be4d5de0853b647c7))
+* **docs:** fix mcp installation instructions for remote servers ([01156d8](https://github.com/avm-codes/sandbox-sdk-ts/commit/01156d89c0af365460d45f33d5f8af3ddfd42172))
+* **internal:** skip tests that depend on mock server ([c68fa27](https://github.com/avm-codes/sandbox-sdk-ts/commit/c68fa27704a6496c98efa862ba89ccf9b8c09650))
+* **mcp:** allow falling back for required env variables ([c298b8d](https://github.com/avm-codes/sandbox-sdk-ts/commit/c298b8df77188bbc6d9e64361d31efc52e9e2142))
+* **mcp:** initialize SDK lazily to avoid failing the connection on init errors ([ab48990](https://github.com/avm-codes/sandbox-sdk-ts/commit/ab48990d27a5367818d8e4df6278168901658a25))
+* **mcp:** update prompt ([767831e](https://github.com/avm-codes/sandbox-sdk-ts/commit/767831e3b06110a9b8494eebf057c6b78410b3aa))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([af1c05b](https://github.com/avm-codes/sandbox-sdk-ts/commit/af1c05b4bf910136d3bc96520119266614e9786e))
+* **ci:** skip uploading artifacts on stainless-internal branches ([38b8060](https://github.com/avm-codes/sandbox-sdk-ts/commit/38b8060d59f36a0eec21f7a17430e9baf58083f6))
+* **client:** do not parse responses with empty content-length ([60b9c54](https://github.com/avm-codes/sandbox-sdk-ts/commit/60b9c54965d6117191e491c19f36f130f18f1296))
+* **client:** restructure abort controller binding ([ed057aa](https://github.com/avm-codes/sandbox-sdk-ts/commit/ed057aa99a33679f7e9d6397b3085aa75911d812))
+* **internal/client:** fix form-urlencoded requests ([fa43006](https://github.com/avm-codes/sandbox-sdk-ts/commit/fa4300657387845d8df49df2404455b66a02ac67))
+* **internal:** add health check to MCP server when running in HTTP mode ([824a092](https://github.com/avm-codes/sandbox-sdk-ts/commit/824a0929c9fab99674667effbf22c522ccafeda1))
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([07377c6](https://github.com/avm-codes/sandbox-sdk-ts/commit/07377c62e73f2cd4e1b47f45e28561ea700e8817))
+* **internal:** allow setting x-stainless-api-key header on mcp server requests ([969cd7a](https://github.com/avm-codes/sandbox-sdk-ts/commit/969cd7a3752535659581d12fbb5f8ba6bb72e657))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([0b09bff](https://github.com/avm-codes/sandbox-sdk-ts/commit/0b09bff22ff302a5a1d2d5dde9ee71d0d1a26d7a))
+* **internal:** avoid type checking errors with ts-reset ([1ec5930](https://github.com/avm-codes/sandbox-sdk-ts/commit/1ec5930b8ed8825871482868673c953f9e4501d6))
+* **internal:** cache fetch instruction calls in MCP server ([099226b](https://github.com/avm-codes/sandbox-sdk-ts/commit/099226b627a73d8b871194d06b522f3ed77fa2de))
+* **internal:** codegen related update ([367c744](https://github.com/avm-codes/sandbox-sdk-ts/commit/367c744d23a1bc01345c53bf92bd6c58d9c1fb88))
+* **internal:** codegen related update ([b31839d](https://github.com/avm-codes/sandbox-sdk-ts/commit/b31839dd6b7329d7cdc7a3b8ef5b9bdf455af5b6))
+* **internal:** codegen related update ([6a05df5](https://github.com/avm-codes/sandbox-sdk-ts/commit/6a05df5b37d87bac59b06aae54da9e787d55faac))
+* **internal:** codegen related update ([f6ffd9c](https://github.com/avm-codes/sandbox-sdk-ts/commit/f6ffd9cc85611476b7b2134cb44920d1f1f40c78))
+* **internal:** codegen related update ([16d847c](https://github.com/avm-codes/sandbox-sdk-ts/commit/16d847c93a88d9cd518b01d0a3b43449425c997c))
+* **internal:** codegen related update ([d82b01f](https://github.com/avm-codes/sandbox-sdk-ts/commit/d82b01fc58b7e33a4f0b42a7e58b4b978de543cd))
+* **internal:** codegen related update ([f923e10](https://github.com/avm-codes/sandbox-sdk-ts/commit/f923e10ba47ade90fa579d8ce92d460e5cc8ef54))
+* **internal:** codegen related update ([838d5eb](https://github.com/avm-codes/sandbox-sdk-ts/commit/838d5eb032141a4b692924a5f32fb73de13b5630))
+* **internal:** codegen related update ([6cd56c6](https://github.com/avm-codes/sandbox-sdk-ts/commit/6cd56c6f9233de14ca5f33e90126535b7329fbd2))
+* **internal:** codegen related update ([7454345](https://github.com/avm-codes/sandbox-sdk-ts/commit/74543459c4ed24eb0142792a237b4b08a7ee67f3))
+* **internal:** codegen related update ([d584984](https://github.com/avm-codes/sandbox-sdk-ts/commit/d58498405b24dceb9c4373ac3b7373832266c708))
+* **internal:** codegen related update ([a85b3aa](https://github.com/avm-codes/sandbox-sdk-ts/commit/a85b3aa9b1035556b29a8f306e1fd0dbc0d22925))
+* **internal:** codegen related update ([3261977](https://github.com/avm-codes/sandbox-sdk-ts/commit/32619779c28e0bb44f814718dba7d162cd228fce))
+* **internal:** codegen related update ([6542f23](https://github.com/avm-codes/sandbox-sdk-ts/commit/6542f23841407a8c29839ebc2adac340e1fed578))
+* **internal:** codegen related update ([d724830](https://github.com/avm-codes/sandbox-sdk-ts/commit/d72483006ffb3520b224a18b86b285d7b133befd))
+* **internal:** codegen related update ([73bb0c7](https://github.com/avm-codes/sandbox-sdk-ts/commit/73bb0c72cccfbd7eebca51554402f85353493452))
+* **internal:** codegen related update ([74e1cc2](https://github.com/avm-codes/sandbox-sdk-ts/commit/74e1cc2249d8471f9a9430220d6f0632d8a04f63))
+* **internal:** codegen related update ([8c747fb](https://github.com/avm-codes/sandbox-sdk-ts/commit/8c747fbd7a3ad70ddb3b82ca6809d73888c3a449))
+* **internal:** codegen related update ([936d003](https://github.com/avm-codes/sandbox-sdk-ts/commit/936d003bc1c907be295ac13ceabd1d5602a2ca95))
+* **internal:** codegen related update ([11a2519](https://github.com/avm-codes/sandbox-sdk-ts/commit/11a2519948b4ca45dbaa16de3a94a8618b6c1fd5))
+* **internal:** codegen related update ([b046e72](https://github.com/avm-codes/sandbox-sdk-ts/commit/b046e723f13cd8ae466b73c06182824407a868c5))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([567aa47](https://github.com/avm-codes/sandbox-sdk-ts/commit/567aa478a3d084b911dcddd19bc55b13b1aaf364))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([f2aa646](https://github.com/avm-codes/sandbox-sdk-ts/commit/f2aa64646d12dbe14de0471b109da2e89153b133))
+* **internal:** fix MCP server TS errors that occur with required client options ([0cb04f4](https://github.com/avm-codes/sandbox-sdk-ts/commit/0cb04f4be82d8de4b0aa7697c1f473230e85a02d))
+* **internal:** improve layout of generated MCP server files ([ed64a86](https://github.com/avm-codes/sandbox-sdk-ts/commit/ed64a86840dde4fc3c44f920bf4c531372bb4b7c))
+* **internal:** improve reliability of MCP servers when using local code mode execution ([1a858d1](https://github.com/avm-codes/sandbox-sdk-ts/commit/1a858d123c889a093b8974fcc59e65167b6864c7))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([6a5555f](https://github.com/avm-codes/sandbox-sdk-ts/commit/6a5555ff429243a1eb9b9016e7825aada7ba2214))
+* **internal:** make MCP code execution location configurable via a flag ([0c4cd12](https://github.com/avm-codes/sandbox-sdk-ts/commit/0c4cd126189f409d2bba38291d252ac9947eda4a))
+* **internal:** move stringifyQuery implementation to internal function ([f167475](https://github.com/avm-codes/sandbox-sdk-ts/commit/f16747587e7993df2cfafe99b4d116d7693e7f02))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([d305d5a](https://github.com/avm-codes/sandbox-sdk-ts/commit/d305d5a85346f2e6a9ee906397920a3c3c60c54a))
+* **internal:** remove mock server code ([85e3c5f](https://github.com/avm-codes/sandbox-sdk-ts/commit/85e3c5fef3b73259fb056899657a865eab29c426))
+* **internal:** support custom-instructions-path flag in MCP servers ([cb3525b](https://github.com/avm-codes/sandbox-sdk-ts/commit/cb3525b3ae0573739aacac9ddd37fd961289a1dd))
+* **internal:** support oauth authorization code flow for MCP servers ([8d21f12](https://github.com/avm-codes/sandbox-sdk-ts/commit/8d21f12a639c4b1674edce2404f45a4f295b0687))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([0b9467f](https://github.com/avm-codes/sandbox-sdk-ts/commit/0b9467f8679422306c0a731e242f897594be231a))
+* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([7759c55](https://github.com/avm-codes/sandbox-sdk-ts/commit/7759c55f66b9fd0124679af3f060e195879b9f69))
+* **internal:** tweak CI branches ([a93480b](https://github.com/avm-codes/sandbox-sdk-ts/commit/a93480bef76df8e19074f7b672b934777cc0f266))
+* **internal:** update dependencies to address dependabot vulnerabilities ([f77e997](https://github.com/avm-codes/sandbox-sdk-ts/commit/f77e997d0f67c1873db1e6adab14a944928f3947))
+* **internal:** update gitignore ([667df96](https://github.com/avm-codes/sandbox-sdk-ts/commit/667df964dc25de28f76084555e0743dd7b4a912d))
+* **internal:** update lock file ([4c8d12f](https://github.com/avm-codes/sandbox-sdk-ts/commit/4c8d12f0a4f665fb4de9f1cc0d5d46ca6b873112))
+* **internal:** update lockfile ([04a0c5c](https://github.com/avm-codes/sandbox-sdk-ts/commit/04a0c5cf26b89a680c559c9132ec0d32387724d2))
+* **internal:** upgrade @modelcontextprotocol/sdk and hono ([19160cb](https://github.com/avm-codes/sandbox-sdk-ts/commit/19160cb96ef78f408c8901410b1e8566a647ccd1))
+* **internal:** upgrade pnpm ([9bcf007](https://github.com/avm-codes/sandbox-sdk-ts/commit/9bcf007b6ee703c4344167e0ff448e6bec230d47))
+* **internal:** upgrade pnpm version ([60766d4](https://github.com/avm-codes/sandbox-sdk-ts/commit/60766d41b411cd8f311d08c233945f402ce6777c))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([cc68c09](https://github.com/avm-codes/sandbox-sdk-ts/commit/cc68c097ab8be0b9cdb1470276801ac5e8257d99))
+* **mcp-server:** improve instructions ([bfc5171](https://github.com/avm-codes/sandbox-sdk-ts/commit/bfc517170c333e63f6a4a5558137e6e83773ca03))
+* **mcp-server:** return access instructions for 404 without API key ([2003aa3](https://github.com/avm-codes/sandbox-sdk-ts/commit/2003aa321dfbd2f2360a6823bc73686fa204fdad))
+* **mcp:** correctly update version in sync with sdk ([7a2dbdb](https://github.com/avm-codes/sandbox-sdk-ts/commit/7a2dbdb5b96a33c06c8cc95443ecd25ee58b034f))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([f20dad3](https://github.com/avm-codes/sandbox-sdk-ts/commit/f20dad3797304af95a8faf134eda1476ef097411))
+* **mcp:** up tsconfig lib version to es2022 ([eb4269f](https://github.com/avm-codes/sandbox-sdk-ts/commit/eb4269fb6ce565d23477478d414890c923ef1e13))
+* update mock server docs ([6cfc7a9](https://github.com/avm-codes/sandbox-sdk-ts/commit/6cfc7a993463b2776615e81de14d4e3b1107e341))
+
+
+### Refactors
+
+* update sdk ([cd026e2](https://github.com/avm-codes/sandbox-sdk-ts/commit/cd026e25c825c5db8f52e65b6e0b2f8fd1ed711c))
+
 ## 2.0.0 (2026-01-26)
 
 Full Changelog: [v1.1.0...v2.0.0](https://github.com/avm-codes/sandbox-sdk-ts/compare/v1.1.0...v2.0.0)

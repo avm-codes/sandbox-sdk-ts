@@ -410,7 +410,7 @@ export interface SandboxDeleteParams {
   create_snapshot?: boolean;
 
   /**
-   * Keep storage after deletion (default: false - storage deleted)
+   * @deprecated This option is ignored. Storage is always deleted.
    */
   keep_storage?: boolean;
 

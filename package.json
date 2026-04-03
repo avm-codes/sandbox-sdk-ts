@@ -1,6 +1,6 @@
 {
   "name": "@avmcodes/sandbox-sdk",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The official TypeScript library for the Sandbox SDK API",
   "author": "Sandbox SDK <>",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
   "type": "commonjs",
   "repository": "github:avm-codes/sandbox-sdk-ts",
   "license": "Apache-2.0",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.30.1",
   "files": [
     "**/*"
   ],
@@ -49,6 +49,17 @@
     "tslib": "^2.8.1",
     "typescript": "5.8.3",
     "typescript-eslint": "8.31.1"
+  },
+  "overrides": {
+    "minimatch": "^9.0.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch": "^9.0.5"
+    }
+  },
+  "resolutions": {
+    "minimatch": "^9.0.5"
   },
   "exports": {
     ".": {
